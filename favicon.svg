@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#050505"/>
+  <!-- octiron root network -->
+  <g fill="none" stroke="#e2231a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 42v8M32 49l-6 6M32 49l6 6M27 44l-7 5M37 44l7 5M21 49l-6 6M43 49l6 6M26 55l-2 5M38 55l2 5M18 48l-7 2M46 48l7 2"/>
+  </g>
+  <!-- red close outline around the mountain -->
+  <path d="M8 42 C12 37 16 33 20 27 C24 21 27 14 32 6 C37 14 40 21 44 27 C48 33 52 37 56 42 Z" fill="#e2231a"/>
+  <!-- gold mountain -->
+  <path d="M12 41 C16 36 19 32 22.5 26.5 C26 21 28.5 15.5 32 9 C35.5 15.5 38 21 41.5 26.5 C45 32 48 36 52 41 Z" fill="#d7aa43"/>
+  <!-- simple shaded facets -->
+  <path d="M32 9 C35.5 15.5 38 21 41.5 26.5 L36 22 L38.5 31 L33.8 27 L32 41 Z" fill="#b6852f" opacity=".9"/>
+  <path d="M32 9 C28.5 15.5 26 21 22.5 26.5 L27.5 22 L25 31 L30 27 L32 41 Z" fill="#efc75f" opacity=".55"/>
+  <!-- light summit -->
+  <path d="M27.5 18.8 L32 9 L36.5 18.8 L34.2 17.2 L32.2 22.5 L30.2 17.4 Z" fill="#fff0b0"/>
+</svg>
