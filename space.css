@@ -1,39 +1,38 @@
-/* Cosmic background override for the visual redesign */
+/* Cosmic background override for the visual redesign.
+   The Discworld art itself is unchanged; only its bottom 5% fades into the page background. */
 html{background:#030713!important}
 body{
   background-color:#030713!important;
-  background-image:
-    radial-gradient(ellipse at 8% 18%,rgba(83,44,132,.30) 0%,rgba(48,33,99,.18) 13%,transparent 34%),
-    radial-gradient(ellipse at 91% 24%,rgba(29,83,142,.30) 0%,rgba(24,57,108,.16) 16%,transparent 38%),
-    radial-gradient(ellipse at 68% 62%,rgba(109,48,104,.20) 0%,rgba(52,43,105,.13) 18%,transparent 42%),
-    radial-gradient(ellipse at 27% 78%,rgba(24,92,125,.20) 0%,rgba(21,57,96,.12) 19%,transparent 43%),
-    radial-gradient(circle at 14% 11%,rgba(255,255,255,.90) 0 1px,transparent 1.7px),
-    radial-gradient(circle at 61% 7%,rgba(198,218,255,.82) 0 1px,transparent 1.8px),
-    radial-gradient(circle at 83% 31%,rgba(255,232,190,.72) 0 1px,transparent 1.8px),
-    radial-gradient(circle at 38% 46%,rgba(255,255,255,.72) 0 .8px,transparent 1.5px),
-    radial-gradient(circle at 74% 79%,rgba(190,211,255,.62) 0 .8px,transparent 1.5px),
-    linear-gradient(135deg,transparent 18%,rgba(69,46,111,.10) 34%,rgba(31,75,118,.08) 48%,transparent 67%),
-    linear-gradient(180deg,#02050d 0%,#07101f 35%,#050a17 68%,#02050d 100%)!important;
-  background-size:
-    100% 1050px,100% 1200px,100% 1450px,100% 1300px,
-    173px 173px,229px 229px,311px 311px,397px 397px,487px 487px,
-    100% 1500px,100% 100%!important;
-  background-repeat:repeat-y,repeat-y,repeat-y,repeat-y,repeat,repeat,repeat,repeat,repeat,repeat-y,no-repeat!important;
+  background-image:url('/assets/cosmic-background.svg')!important;
+  background-size:cover!important;
+  background-position:center top!important;
+  background-repeat:repeat-y!important;
+  background-attachment:fixed!important;
 }
-/* Make the original Discworld illustration dissolve into the same dark cosmos. */
-.hero-art{position:relative!important;z-index:1!important;margin-bottom:0!important}
-.hero-art::after{
-  content:""!important;
-  position:absolute!important;
-  z-index:3!important;
-  left:0!important;right:0!important;
-  bottom:-110px!important;
-  height:clamp(190px,19vw,330px)!important;
-  pointer-events:none!important;
-  background:
-    radial-gradient(ellipse at 16% 82%,rgba(65,42,107,.18),transparent 34%),
-    radial-gradient(ellipse at 82% 76%,rgba(25,69,119,.18),transparent 37%),
-    linear-gradient(to bottom,rgba(3,7,19,0) 0%,rgba(3,7,19,.04) 15%,rgba(3,7,19,.20) 34%,rgba(3,7,19,.52) 55%,rgba(3,7,19,.84) 73%,#030713 88%,rgba(3,7,19,0) 100%)!important;
+.hero-art{
+  position:relative!important;
+  z-index:1!important;
+  margin-bottom:0!important;
+  background-image:url('/assets/cosmic-background.svg')!important;
+  background-size:cover!important;
+  background-position:center bottom!important;
 }
-.shell{position:relative!important;z-index:2!important;padding-top:100px!important;background:transparent!important}
-@media(max-width:760px){.hero-art::after{bottom:-65px!important;height:160px!important}.shell{padding-top:72px!important}}
+.hero-art>img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 95%,rgba(0,0,0,.94) 95.7%,rgba(0,0,0,.72) 97%,rgba(0,0,0,.35) 98.5%,transparent 100%)!important;
+  mask-image:linear-gradient(to bottom,#000 0%,#000 95%,rgba(0,0,0,.94) 95.7%,rgba(0,0,0,.72) 97%,rgba(0,0,0,.35) 98.5%,transparent 100%)!important;
+  -webkit-mask-size:100% 100%!important;
+  mask-size:100% 100%!important;
+  -webkit-mask-repeat:no-repeat!important;
+  mask-repeat:no-repeat!important;
+}
+/* Disable the old dark overlay: it was dimming far more than the lower edge. */
+.hero-art::after{display:none!important;content:none!important}
+.shell{position:relative!important;z-index:2!important;padding-top:72px!important;background:transparent!important}
+@media(max-width:760px){
+ body{background-attachment:scroll!important}
+ .shell{padding-top:48px!important}
+}
