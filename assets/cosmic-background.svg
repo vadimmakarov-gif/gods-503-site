@@ -4,9 +4,15 @@
  <radialGradient id="blue"><stop stop-color="#527fc7" stop-opacity=".38"/><stop offset=".38" stop-color="#24477f" stop-opacity=".24"/><stop offset=".76" stop-color="#122750" stop-opacity=".10"/><stop offset="1" stop-color="#0a1530" stop-opacity="0"/></radialGradient>
  <radialGradient id="violet"><stop stop-color="#9155a5" stop-opacity=".32"/><stop offset=".40" stop-color="#5b376d" stop-opacity=".20"/><stop offset=".76" stop-color="#322044" stop-opacity=".08"/><stop offset="1" stop-color="#21152e" stop-opacity="0"/></radialGradient>
  <radialGradient id="dust"><stop stop-color="#815466" stop-opacity=".13"/><stop offset=".55" stop-color="#483342" stop-opacity=".07"/><stop offset="1" stop-color="#2d202b" stop-opacity="0"/></radialGradient>
+ <radialGradient id="starWhite"><stop offset="0" stop-color="#fff"/><stop offset=".18" stop-color="#fff" stop-opacity=".96"/><stop offset=".45" stop-color="#dceaff" stop-opacity=".45"/><stop offset="1" stop-color="#b8d6ff" stop-opacity="0"/></radialGradient>
+ <radialGradient id="starBlue"><stop offset="0" stop-color="#fff"/><stop offset=".16" stop-color="#eaf5ff"/><stop offset=".43" stop-color="#8bc8ff" stop-opacity=".48"/><stop offset="1" stop-color="#5aa8ff" stop-opacity="0"/></radialGradient>
+ <radialGradient id="starWarm"><stop offset="0" stop-color="#fffdf2"/><stop offset=".17" stop-color="#fff4c8"/><stop offset=".45" stop-color="#ffd17b" stop-opacity=".45"/><stop offset="1" stop-color="#e69a48" stop-opacity="0"/></radialGradient>
+ <linearGradient id="rayH"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".43" stop-color="#fff" stop-opacity=".10"/><stop offset=".5" stop-color="#fff" stop-opacity=".78"/><stop offset=".57" stop-color="#fff" stop-opacity=".10"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <linearGradient id="rayV" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".43" stop-color="#fff" stop-opacity=".10"/><stop offset=".5" stop-color="#fff" stop-opacity=".72"/><stop offset=".57" stop-color="#fff" stop-opacity=".10"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
  <filter id="cloud"><feTurbulence type="fractalNoise" baseFrequency=".005 .011" numOctaves="5" seed="17"/><feColorMatrix values=".25 0 0 0 .04  0 .34 0 0 .06  0 0 .72 0 .14  0 0 0 .55 0"/><feGaussianBlur stdDeviation="15"/></filter>
  <filter id="cloud2"><feTurbulence type="fractalNoise" baseFrequency=".008" numOctaves="4" seed="31"/><feColorMatrix values=".54 0 0 0 .10  0 .23 0 0 .03  0 0 .66 0 .16  0 0 0 .34 0"/><feGaussianBlur stdDeviation="21"/></filter>
  <filter id="stars"><feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="1" seed="9"/><feColorMatrix values="3.6 0 0 0 -2.55  0 3.6 0 0 -2.55  0 0 3.8 0 -2.6  0 0 0 1 0"/></filter>
+ <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
 <rect width="1600" height="1200" fill="url(#base)"/>
 <ellipse cx="250" cy="350" rx="650" ry="420" fill="url(#blue)" transform="rotate(-20 250 350)"/>
@@ -15,10 +21,28 @@
 <rect x="-100" y="80" width="1800" height="980" filter="url(#cloud)" opacity=".62"/>
 <rect x="-100" y="250" width="1800" height="820" filter="url(#cloud2)" opacity=".45"/>
 <rect width="1600" height="1200" filter="url(#stars)" opacity=".68"/>
+<!-- numerous faint background stars -->
 <g fill="#fff" opacity=".88">
  <circle cx="76" cy="94" r="1"/><circle cx="164" cy="174" r="1.5"/><circle cx="282" cy="88" r=".8"/><circle cx="408" cy="292" r="1"/><circle cx="522" cy="184" r=".9"/><circle cx="625" cy="348" r="1.2"/><circle cx="725" cy="124" r="1.4"/><circle cx="836" cy="252" r=".8"/><circle cx="945" cy="86" r="1"/><circle cx="1018" cy="246" r="1"/><circle cx="1154" cy="132" r=".9"/><circle cx="1260" cy="480" r="1"/><circle cx="1390" cy="155" r="1.6"/><circle cx="1512" cy="310" r=".8"/>
  <circle cx="102" cy="418" r=".9"/><circle cx="238" cy="536" r="1.2"/><circle cx="372" cy="448" r=".8"/><circle cx="498" cy="606" r="1.1"/><circle cx="614" cy="508" r=".9"/><circle cx="744" cy="694" r="1.3"/><circle cx="826" cy="472" r=".8"/><circle cx="930" cy="615" r="1.4"/><circle cx="1084" cy="548" r=".9"/><circle cx="1198" cy="706" r="1.1"/><circle cx="1344" cy="592" r=".8"/><circle cx="1510" cy="684" r="1.2"/>
  <circle cx="54" cy="826" r="1.2"/><circle cx="214" cy="915" r="1.4"/><circle cx="330" cy="786" r=".8"/><circle cx="468" cy="994" r="1"/><circle cx="555" cy="760" r="1"/><circle cx="640" cy="1040" r="1.3"/><circle cx="792" cy="878" r=".9"/><circle cx="902" cy="1088" r="1.1"/><circle cx="1018" cy="816" r=".8"/><circle cx="1130" cy="890" r="1.8"/><circle cx="1268" cy="1042" r="1"/><circle cx="1378" cy="832" r=".9"/><circle cx="1460" cy="980" r="1.2"/><circle cx="1552" cy="1108" r=".8"/>
 </g>
 <g fill="#bcd7ff" opacity=".72"><circle cx="348" cy="672" r="1.1"/><circle cx="680" cy="910" r=".9"/><circle cx="1060" cy="362" r="1.1"/><circle cx="1420" cy="744" r="1"/></g>
+<!-- medium stars with natural soft halos -->
+<g>
+ <circle cx="190" cy="330" r="10" fill="url(#starBlue)"/><circle cx="190" cy="330" r="1.7" fill="#f8fdff"/>
+ <circle cx="476" cy="138" r="8" fill="url(#starWhite)"/><circle cx="476" cy="138" r="1.5" fill="#fff"/>
+ <circle cx="668" cy="574" r="9" fill="url(#starWarm)"/><circle cx="668" cy="574" r="1.6" fill="#fff9e5"/>
+ <circle cx="1004" cy="752" r="10" fill="url(#starBlue)"/><circle cx="1004" cy="752" r="1.7" fill="#fff"/>
+ <circle cx="1244" cy="286" r="8" fill="url(#starWhite)"/><circle cx="1244" cy="286" r="1.5" fill="#fff"/>
+ <circle cx="1450" cy="530" r="9" fill="url(#starWarm)"/><circle cx="1450" cy="530" r="1.6" fill="#fff9e8"/>
+ <circle cx="356" cy="1034" r="9" fill="url(#starBlue)"/><circle cx="356" cy="1034" r="1.6" fill="#fff"/>
+ <circle cx="1320" cy="1010" r="10" fill="url(#starWhite)"/><circle cx="1320" cy="1010" r="1.7" fill="#fff"/>
+</g>
+<!-- rare bright diffraction stars: only a few, so the sky remains natural -->
+<g filter="url(#softGlow)">
+ <g transform="translate(785 206)"><circle r="18" fill="url(#starWarm)"/><rect x="-28" y="-.65" width="56" height="1.3" fill="url(#rayH)"/><rect x="-.65" y="-34" width="1.3" height="68" fill="url(#rayV)"/><circle r="2.2" fill="#fffdf1"/></g>
+ <g transform="translate(1118 936)"><circle r="16" fill="url(#starBlue)"/><rect x="-25" y="-.55" width="50" height="1.1" fill="url(#rayH)"/><rect x="-.55" y="-29" width="1.1" height="58" fill="url(#rayV)"/><circle r="2" fill="#f5fbff"/></g>
+ <g transform="translate(286 716)"><circle r="14" fill="url(#starWhite)"/><rect x="-21" y="-.5" width="42" height="1" fill="url(#rayH)"/><rect x="-.5" y="-25" width="1" height="50" fill="url(#rayV)"/><circle r="1.9" fill="#fff"/></g>
+</g>
 </svg>
