@@ -1,0 +1,37 @@
+/* Cosmic background override for the visual redesign.
+   Version A is preserved separately. In this working version only the bottom 10% of the original Discworld art fades into space. */
+html{background:#030713!important}
+body{
+  background-color:#030713!important;
+  background-image:url('/assets/cosmic-background.svg')!important;
+  background-size:cover!important;
+  background-position:center top!important;
+  background-repeat:repeat-y!important;
+  background-attachment:fixed!important;
+}
+.hero-art{
+  position:relative!important;
+  z-index:1!important;
+  margin-bottom:0!important;
+  background-image:url('/assets/cosmic-background.svg')!important;
+  background-size:cover!important;
+  background-position:center bottom!important;
+}
+.hero-art>img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 90%,rgba(0,0,0,.97) 91%,rgba(0,0,0,.84) 93%,rgba(0,0,0,.58) 96%,rgba(0,0,0,.28) 98%,transparent 100%)!important;
+  mask-image:linear-gradient(to bottom,#000 0%,#000 90%,rgba(0,0,0,.97) 91%,rgba(0,0,0,.84) 93%,rgba(0,0,0,.58) 96%,rgba(0,0,0,.28) 98%,transparent 100%)!important;
+  -webkit-mask-size:100% 100%!important;
+  mask-size:100% 100%!important;
+  -webkit-mask-repeat:no-repeat!important;
+  mask-repeat:no-repeat!important;
+}
+.hero-art::after{display:none!important;content:none!important}
+.shell{position:relative!important;z-index:2!important;padding-top:72px!important;background:transparent!important}
+@media(max-width:760px){
+ body{background-attachment:scroll!important}
+ .shell{padding-top:48px!important}
+}
